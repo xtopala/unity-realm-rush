@@ -2,8 +2,8 @@
 
 public class Waypoint : MonoBehaviour
 {
+    public bool isExplored = false;
     const int gridSize = 10;
-    Vector2Int gridPos;
 
     public int GetGridSize()
     {
@@ -22,11 +22,5 @@ public class Waypoint : MonoBehaviour
     {
         MeshRenderer topMeshRenderer = transform.Find("Top").GetComponent<MeshRenderer>();
         topMeshRenderer.material.color = color;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 }
