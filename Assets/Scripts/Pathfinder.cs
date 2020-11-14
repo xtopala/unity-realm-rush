@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class Pathfinder : MonoBehaviour
@@ -21,11 +20,19 @@ public class Pathfinder : MonoBehaviour
 
     public List<Waypoint> GetPath()
     {
+        if (path.Count == 0)
+        {
+            CalculatePath();
+        }
+        return path;
+    }
+
+    private void CalculatePath()
+    {
         LoadBlocks();
         ColorStartAndEnd();
         BreadthFirstSearch();
         CreatePath();
-        return path;
     }
 
     private void CreatePath()
@@ -81,7 +88,7 @@ public class Pathfinder : MonoBehaviour
     {
         Waypoint neighbour = grid[neighbourCoordinates];
         if (neighbour.isExplored || queue.Contains(neighbour))
-        { 
+        {
             // do nothing
         }
         else
