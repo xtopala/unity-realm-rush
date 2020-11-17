@@ -11,7 +11,7 @@ public class Pathfinder : MonoBehaviour
     Waypoint searchCenter;  // the current search center
     List<Waypoint> path = new List<Waypoint>(); // todo: make private
 
-    Vector2Int[] directions = {
+    readonly Vector2Int[] directions = {
         Vector2Int.up,
         Vector2Int.right,
         Vector2Int.down,
