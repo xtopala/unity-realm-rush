@@ -35,6 +35,8 @@ public class EnemyDamage : MonoBehaviour
         // important to instantiate before destroying this object
         var vfx = Instantiate(deathParticlePrefab, transform.position, Quaternion.identity);
         vfx.Play();
+
         Destroy(gameObject);
+        Destroy(vfx.gameObject, vfx.main.duration);
     }
 }
